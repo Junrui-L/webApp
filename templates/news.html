@@ -1,0 +1,23 @@
+<ion-view title="新闻">
+        <ion-nav-buttons side="right" >
+                <button class="button">
+                        跳转
+                </button>
+
+        </ion-nav-buttons >
+        <ion-content on-drag-right="toHome()" on-drag-left="toforum()">
+
+              <ion-list >
+                      <ion-item class=" item-thumbnail-right con" ng-repeat="item in list" href ='#/tab/news_content/{{item.aid}}'>
+                              <img ng-src="http://www.phonegap100.com/data/attachment/{{item.pic}}"  onerror ="this.src = 'img/ionic.png'" alt="{{item.title}}">
+                              <h2>{{item.title}}</h2>
+                      </ion-item>
+              </ion-list>
+                <!--上拉加载下页数据-->
+                <ion-infinite-scroll
+                on-infinite="loadMore()"
+                distance="1%" ng-if ='hasListData()'>
+                </ion-infinite-scroll>
+        </ion-content>
+</ion-view>
+

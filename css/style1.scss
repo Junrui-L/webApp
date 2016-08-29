@@ -1,0 +1,20 @@
+$color: #ccc !default;
+$a: 12px;
+ul {
+  width: 10+2 px;
+  height: $a* 5;
+  color: $color;
+  li {
+    float: left;
+    @extend ul;
+    background: $color;
+    color: #aaa;
+    a {
+      display: block;
+
+      text-decoration: none;
+    }
+  }
+}
+
+

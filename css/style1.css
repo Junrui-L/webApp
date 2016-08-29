@@ -1,0 +1,13 @@
+ul, ul li {
+  width: 12 px;
+  height: 60px;
+  color: #ccc; }
+  ul li {
+    float: left;
+    background: #ccc;
+    color: #aaa; }
+    ul li a {
+      display: block;
+      text-decoration: none; }
+
+/*# sourceMappingURL=style1.css.map */

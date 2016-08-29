@@ -1,0 +1,65 @@
+<!--
+
+tabs-颜色 背景颜色
+
+tabs-color-颜色 字体和图标颜色
+
+tabs-icon-top 图标在上文字在下
+
+-->
+
+<ion-side-menus>
+        <ion-side-menu-content class="calm-bg">
+
+                <!--ion-nav-bar   以前是放在首页-->
+                <ion-nav-bar class="bar-positive">
+                        <ion-nav-back-button>
+                        </ion-nav-back-button>
+                </ion-nav-bar>
+
+
+                <!--ion-nav-view 相当于 视图页面-->
+                <ion-tabs class="tabs-icon-top tabs-color-active-positive {{hideTabs}}">
+
+                        <!-- home Tab -->
+                        <ion-tab title="首页" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/tab/home">
+                                <ion-nav-view name="tab-home">
+
+                                </ion-nav-view>
+                        </ion-tab>
+
+                        <!-- new Tab -->
+                        <ion-tab title="新闻" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/news">
+                                <ion-nav-view name="tab-news">
+                                </ion-nav-view>
+                        </ion-tab>
+
+                        <!-- new forum -->
+                        <ion-tab title="论坛" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/forum">
+                                <ion-nav-view name="tab-forum">
+                                </ion-nav-view>
+                        </ion-tab>
+
+                        <ion-tab title="用户中心" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/user">
+                                <ion-nav-view name="tab-user">
+
+                                </ion-nav-view>
+                        </ion-tab>
+
+                </ion-tabs>
+
+
+
+
+        </ion-side-menu-content>
+
+        <ion-side-menu side="left" width="150" class="balanced-bg">
+
+                左侧区域
+        </ion-side-menu>
+        <ion-side-menu side="right" width="150" class="dark-bg">
+
+                右侧区域
+        </ion-side-menu>
+
+</ion-side-menus>

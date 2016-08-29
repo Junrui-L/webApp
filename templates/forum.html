@@ -1,0 +1,11 @@
+<ion-view title="论坛">
+        <ion-content on-drag-left="toUser()" on-drag-right="toNews()">
+                <ion-list>
+                        <ion-item  class=" item-avatar" ng-repeat="item in forums" href ='#/tab/forum_detail/{{item.tid}}'>
+                                <img src="img/ionic.png" alt="{{item.title}}">
+                                <p>作者:{{item.author}}</p>
+                                <h2>{{item.subject}}</h2>
+                        </ion-item>
+                </ion-list>
+        </ion-content>
+</ion-view>

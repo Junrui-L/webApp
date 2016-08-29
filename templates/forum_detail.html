@@ -1,0 +1,29 @@
+<ion-view title="帖子详情" >
+        <ion-content padding="true" on-swipe-right = "swipeRight()" >
+                <p ng-if="isLoading"  class="loading" >
+                        <img src="img/loader.gif" alt="loading">
+                </p>
+
+                <h2 class="subject">
+                        {{subject}}
+                </h2>
+                <div class="con" ng-bind-html="item">
+
+                </div>
+
+        </ion-content>
+        <ion-footer-bar  class="bar-light ">
+                <button class="button button-clear">
+                        字体
+                </button>
+                <button class="button button-clear ">
+                        <i class="  icon ion-ios-star-outline "></i>
+                </button>
+                <!--<i class="button">评论</i>-->
+
+
+                <button class="button button-clear pull-right" ng-click="goHome()">
+                        <i class="  icon ion-share "></i>
+                </button>
+        </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,35 @@
+<ion-view  view-title="首页">
+        <ion-nav-buttons  side="left">
+                <button class="button button-clear button-light "  ng-click="flag.showDelete=!flag.showDelete;">
+                        <i class="  icon ion-minus-circled  light" ></i>
+                </button>
+        </ion-nav-buttons >
+
+        <ion-nav-buttons side="right">
+                <button class="button button-positive "  ng-click="flag.showReorder =!flag.showReorder;">
+                        排序
+                </button>
+        </ion-nav-buttons >
+        <ion-content  class="padding">
+                <ion-slide-box delegate-handle="slideBox" class="slideContent" auto-play="true" slide-interval="2000 " >
+                        <ion-slide ng-repeat="item in items">
+                                <div class="box blue" ><img src="{{item}}" alt="" /></div>
+                        </ion-slide>
+                </ion-slide-box>
+                <ion-list show-delete = "flag.showDelete" show-reorder="flag.showReorder" >
+                        <ion-item class="item-avatar"  ng-repeat="(key, list) in lists" >
+                                <ion-option-button class="button-positive">分享</ion-option-button>
+                                <ion-option-button class="button-assertive" ng-click="item_Delete(key)">删除</ion-option-button>
+                                <img ng-src="http://www.phonegap100.com/data/attachment/{{list.pic}}"  onerror ="this.src = 'img/ionic.png'" alt="....">
+                                  {{list.title}}
+                                <ion-delete-button class="ion-minus-circled" ng-click="item_Delete(key)"></ion-delete-button>
+                                <ion-reorder-button class="ion-navicon" on-reorder="move_item(list,$fromIndex,$toIndex)"></ion-reorder-button>
+                        </ion-item>
+                </ion-list>
+
+                <button class="button button-royal button-block " ng-click="show()">底部操作栏</button>
+                <button class="button button-positive button-block " ng-click="showPopup()">弹出一个窗口</button>
+                <button class="button button-assertive button-block " ng-click="showConfirm()">弹出一个确认框</button>
+                <button class="button button-dark button-block " ng-click="showAlert()">弹出提示窗口</button>
+        </ion-content>
+</ion-view>

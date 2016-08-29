@@ -1,0 +1,52 @@
+<ion-view title="用户中心">
+        <ion-nav-buttons  side="left" >
+                <button class="button"  ng-click="logout();" ng-show="isLogin">
+                        退出登录
+                </button>
+        </ion-nav-buttons >
+
+        <ion-content on-drag-right="toForum()">
+                <div class="user" ng-show="noLogin">
+                        <img src="img/commentfailure.png" alt="adam" />
+                        <div class="btn" >
+                                <a  ng-click="openModalc()"   > 马上注册</a><!--
+                                --><a ng-click="openModalz()"  >马上登录</a>
+                        </div>
+                </div>
+                <div class="user" ng-show="isLogin">
+                        <img src="img/ben.png" alt="adam" />
+                        <div class="username" >
+                               {{user.userName}}
+                        </div>
+                </div>
+                <ion-list>
+                        <ion-item class="item-divider"></ion-item>
+                        <ion-item class="item-icon-left" ng-click="showPrompt()">
+                                        <i class="icon  ion-chatbubble-working positive fill-icon" ></i>
+                                        <i >消息</i>
+                        </ion-item>
+                        <ion-item class="item-divider"></ion-item>
+                        <ion-item class="item-icon-left" ng-click="showConfirm()">
+                                <i class="icon  ion-planet assertive" ></i>
+                                <i >在线客服</i>
+                        </ion-item>
+                        <ion-item class="item-divider"></ion-item>
+                        <ion-item class="item-icon-left" ng-click="showPopup()">
+                                <i class="icon  ion-ribbon-b  assertive" ></i>
+                                <i >意见反馈</i>
+                        </ion-item>
+
+                </ion-list>
+                <button class="button button-dark button-block"> {{status}}</button>
+        </ion-content>
+        <script id="ez-popover.html" type="text/ng-template">
+                <ion-popover-view class="black-bg  padding pop-style" style="top:30px;">
+
+
+                        <div class="poverder">
+                                <p class="calm-bg" ng-click="closePopover()">这里是注册后一些有用的信息，请务必仔细阅读哦，亲</p>
+                        </div>
+
+                </ion-popover-view>
+        </script>
+</ion-view>
